@@ -1,0 +1,13 @@
+{
+  "name": "radar-brasil",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Dashboard de notícias: política, economia, bolsa, mercado de capitais e utilities no Brasil",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.5.0"
+  }
+}
