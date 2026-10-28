@@ -1,6 +1,6 @@
 # Radar Brasil
 
-Dashboard de notícias com as manchetes mais recentes de **Política, Economia, Bolsa, Capitais & Dívida e Utilities** (energia, saneamento, resíduos/aterros), vindas só de uma lista fechada de veículos confiáveis. Cada card mostra o resumo (lead publicado pelo próprio veículo) e leva direto à matéria original.
+Dashboard de notícias com as manchetes mais recentes de **Política, Economia, Bolsa, Capitais & Dívida, Utilities** (energia, saneamento, resíduos/aterros) **e Internacional** (só fatores externos que afetam o Brasil: Fed, Treasuries, China, petróleo, minério), vindas só de uma lista fechada de veículos confiáveis. Cada card mostra o resumo (lead publicado pelo próprio veículo) e leva direto à matéria original.
 
 ## Como publicar na Vercel (10 minutos)
 
@@ -36,7 +36,7 @@ Sem a chave, o painel funciona normalmente, só sem esse bloco. O resumo é cach
 |---|---|
 | `lib/sources.js` | **Whitelist de fontes.** Qualquer notícia de domínio fora desta lista é descartada. Edite aqui para incluir/remover veículos. |
 | `lib/feeds.js` | Feeds por aba: RSS oficiais (g1, CNN Brasil, InfoMoney, Folha, Agência Brasil, Brazil Journal) + buscas do Google News restritas por `site:` aos veículos sem RSS público (Valor, Estadão, O Globo, Pipeline, Bloomberg, FT, Reuters, imprensa setorial de energia). |
-| `lib/classify.js` | Palavras-chave que classificam notícias de feeds gerais e marcam subtemas de Utilities (energia / saneamento / resíduos) e tickers da B3. |
+| `lib/classify.js` | Classificação e **filtro de relevância**: Bolsa e Capitais & Dívida só aceitam notícias do Brasil; Economia manda notícia política para Política e economia de outros países para Internacional; descarta loterias e conteúdo de finanças pessoais genérico. Também marca subtemas de Utilities e tickers da B3. |
 | `lib/aggregate.js` | Baixa tudo em paralelo, filtra pela whitelist, remove duplicadas, ordena por horário. Cache de 5 min. |
 | `api/news.js` | `GET /api/news?cat=utilities&hours=48` → JSON com as notícias. |
 | `api/status.js` | `GET /api/status` → mostra quais feeds responderam e quantas notícias trouxeram. **Olhe isso depois do primeiro deploy.** |

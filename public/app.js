@@ -5,6 +5,7 @@ const TABS = [
   { id: 'bolsa', label: 'Bolsa' },
   { id: 'capitais', label: 'Capitais & Dívida' },
   { id: 'utilities', label: 'Utilities' },
+  { id: 'global', label: 'Internacional' },
 ];
 const CAT_LABEL = Object.fromEntries(TABS.map((t) => [t.id, t.label]));
 const SUBS = [['', 'Todas'], ['energia', 'Energia'], ['saneamento', 'Saneamento'], ['residuos', 'Resíduos e aterros']];

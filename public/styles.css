@@ -13,6 +13,7 @@
   --c-bolsa: #127a4a;
   --c-capitais: #7a4bc2;
   --c-utilities: #c26a00;
+  --c-global: #0e7c86;
   --shadow: 0 1px 2px rgba(20, 22, 28, .05), 0 2px 8px rgba(20, 22, 28, .04);
   color-scheme: light;
 }
@@ -20,14 +21,14 @@
   :root:not([data-theme="light"]) {
     --bg: #0f1115; --surface: #171a20; --ink: #eceef2; --muted: #a3a9b6; --faint: #737a88;
     --line: #262a33; --accent: #6aa8ff; --accent-soft: #1a2638; --chip: #1f232b;
-    --c-politica: #ff6b76; --c-economia: #6aa8ff; --c-bolsa: #4cc98a; --c-capitais: #b597ff; --c-utilities: #ffb04d;
+    --c-politica: #ff6b76; --c-economia: #6aa8ff; --c-bolsa: #4cc98a; --c-capitais: #b597ff; --c-utilities: #ffb04d; --c-global: #4fd1db;
     --shadow: none; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #0f1115; --surface: #171a20; --ink: #eceef2; --muted: #a3a9b6; --faint: #737a88;
   --line: #262a33; --accent: #6aa8ff; --accent-soft: #1a2638; --chip: #1f232b;
-  --c-politica: #ff6b76; --c-economia: #6aa8ff; --c-bolsa: #4cc98a; --c-capitais: #b597ff; --c-utilities: #ffb04d;
+  --c-politica: #ff6b76; --c-economia: #6aa8ff; --c-bolsa: #4cc98a; --c-capitais: #b597ff; --c-utilities: #ffb04d; --c-global: #4fd1db;
   --shadow: none; color-scheme: dark;
 }
 
