@@ -164,7 +164,7 @@ function render() {
       return;
     }
     c.innerHTML = TABS.slice(1).map((t) => {
-      const list = filtered(t.id).slice(0, 6);
+      const list = filtered(t.id).slice(0, t.id === 'global' ? 3 : 6);
       if (!list.length) return '';
       return `<section class="section" style="--sc: var(--c-${t.id})">
         <div class="section-head"><h2>${t.label}</h2><a href="#${t.id}">Ver tudo →</a></div>

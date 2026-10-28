@@ -36,7 +36,7 @@ Sem a chave, o painel funciona normalmente, só sem esse bloco. O resumo é cach
 |---|---|
 | `lib/sources.js` | **Whitelist de fontes.** Qualquer notícia de domínio fora desta lista é descartada. Edite aqui para incluir/remover veículos. |
 | `lib/feeds.js` | Feeds por aba: RSS oficiais (g1, CNN Brasil, InfoMoney, Folha, Agência Brasil, Brazil Journal) + buscas do Google News restritas por `site:` aos veículos sem RSS público (Valor, Estadão, O Globo, Pipeline, Bloomberg, FT, Reuters, imprensa setorial de energia). |
-| `lib/classify.js` | Classificação e **filtro de relevância**: Bolsa e Capitais & Dívida só aceitam notícias do Brasil; Economia manda notícia política para Política e economia de outros países para Internacional; descarta loterias e conteúdo de finanças pessoais genérico. Também marca subtemas de Utilities e tickers da B3. |
+| `lib/classify.js` | **Filtro "Brasil primeiro"**: Política, Economia, Bolsa, Capitais & Dívida e Utilities só aceitam notícias do Brasil (notícia sobre outro país sem ligação com o Brasil é descartada); Bolsa e Capitais exigem marcador explícito de Brasil (Ibovespa, B3, ticker, empresa brasileira, R$, Tesouro, CVM...). A aba Internacional só recebe fatores externos de impacto direto (Fed, Treasuries, petróleo, minério, economia chinesa, guerra comercial, BCE). Loterias e finanças pessoais genéricas são descartadas. |
 | `lib/aggregate.js` | Baixa tudo em paralelo, filtra pela whitelist, remove duplicadas, ordena por horário. Cache de 5 min. |
 | `api/news.js` | `GET /api/news?cat=utilities&hours=48` → JSON com as notícias. |
 | `api/status.js` | `GET /api/status` → mostra quais feeds responderam e quantas notícias trouxeram. **Olhe isso depois do primeiro deploy.** |
