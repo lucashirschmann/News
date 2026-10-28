@@ -35,7 +35,7 @@ Sem a chave, o painel funciona normalmente, só sem esse bloco. O resumo é cach
 | Peça | O que faz |
 |---|---|
 | `lib/sources.js` | **Whitelist de fontes.** Qualquer notícia de domínio fora desta lista é descartada. Edite aqui para incluir/remover veículos. |
-| `lib/feeds.js` | Feeds por aba: RSS oficiais (g1, CNN Brasil, InfoMoney, Folha, Agência Brasil, Poder360, Brazil Journal) + buscas do Google News restritas por `site:` aos veículos sem RSS público (Valor, Estadão, O Globo, Pipeline, Bloomberg, FT, Reuters, imprensa setorial de energia). |
+| `lib/feeds.js` | Feeds por aba: RSS oficiais (g1, CNN Brasil, InfoMoney, Folha, Agência Brasil, Brazil Journal) + buscas do Google News restritas por `site:` aos veículos sem RSS público (Valor, Estadão, O Globo, Pipeline, Bloomberg, FT, Reuters, imprensa setorial de energia). |
 | `lib/classify.js` | Palavras-chave que classificam notícias de feeds gerais e marcam subtemas de Utilities (energia / saneamento / resíduos) e tickers da B3. |
 | `lib/aggregate.js` | Baixa tudo em paralelo, filtra pela whitelist, remove duplicadas, ordena por horário. Cache de 5 min. |
 | `api/news.js` | `GET /api/news?cat=utilities&hours=48` → JSON com as notícias. |
