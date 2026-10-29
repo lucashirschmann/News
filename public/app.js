@@ -209,4 +209,8 @@ state.tab = CAT_LABEL[location.hash.slice(1)] ? location.hash.slice(1) : 'destaq
 render();
 load();
 setInterval(load, REFRESH_MS);
-setInterval(() => { if (!state.loading) $('#updated').textContent = state.updatedAt ? `Atualizado ${timeAgo(state.updatedAt)}` : ''; }, 60000);
+// Ao voltar para a aba depois de um tempo, busca notícias novas na hora
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible' && state.updatedAt && Date.now() - new Date(state.updatedAt) > 5 * 60 * 1000) load();
+});
+setInterval(() => { if (!state.loading) $('#updated').textContent = state.updatedAt ? `Atualizado ${timeAgo(state.updatedAt)} · ${new Date(state.updatedAt).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}` : ''; }, 60000);
